@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tawjih Strategy — We design strategies, you lead success</title>
+  <meta name="description" content="Cabinet de conseil en stratégie, organisation et pilotage de performance. Audit ISO 9001, tableaux de bord, accompagnement PME/TPE.">
+  
+  <style>
+    /* ============================================
+       VARIABLES & RESET
+       ============================================ */
+    :root{
+      --blue:#0B4DA2;
+      --blue-light:#1a5bb8;
+      --blue-dark:#083a7a;
+      --silver:#C0C6CC;
+      --white:#ffffff;
+      --bg:#f7f9fb;
+      --text:#0b2540;
+      --text-light:#556678;
+      --text-muted:#6b7c8e;
+      --border:#e1e8ed;
+      --shadow-sm:0 2px 8px rgba(11,77,162,0.06);
+      --shadow-md:0 6px 20px rgba(11,77,162,0.08);
+      --shadow-lg:0 12px 36px rgba(11,77,162,0.12);
+      --radius:12px;
+      --max-width:1200px;
+      --transition:all 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    
+    *,*::before,*::after{box-sizing:border-box}
+    
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+    }
+    
+    body{
+      margin:0;
+      padding:0;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
+      font-size:16px;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+    
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1,h2,h3,h4,h5,h6{
+      margin:0;
+      font-weight:700;
+      line-height:1.2;
+      color:var(--text);
+    }
+    
+    h2{font-size:clamp(24px,5vw,32px)}
+    h3{font-size:clamp(18px,3vw,20px)}
+    h4{font-size:18px}
+    
+    p{margin:0 0 1em}
+    
+    a{
+      color:inherit;
+      text-decoration:none;
+      transition:var(--transition);
+    }
+    
+    strong{font-weight:600}
+    
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:20px 24px;
+    }
+    
+    /* ============================================
+       HEADER & NAVIGATION
+       ============================================ */
+    header{
+      background:linear-gradient(180deg,var(--white) 0%,rgba(255,255,255,0.98) 100%);
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid var(--border);
+      box-shadow:var(--shadow-sm);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+    
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-shrink:0;
+    }
+    
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      font-weight:700;
+      font-size:18px;
+      box-shadow:0 4px 12px rgba(11,77,162,0.25);
+    }
+    
+    .brand-text h1{
+      font-size:17px;
+      margin:0;
+      color:var(--blue);
+    }
+    
+    .tagline{
+      font-size:11px;
+      color:var(--text-light);
+      margin:2px 0 0;
+    }
+    
+    nav ul{
+      display:flex;
+      gap:clamp(12px,3vw,24px);
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    
+    nav li{
+      font-weight:500;
+      font-size:15px;
+    }
+    
+    nav a:hover{
+      color:var(--blue);
+    }
+    
+    .cta-group{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn{
+      display:inline-block;
+      padding:11px 20px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      border:none;
+      transition:var(--transition);
+      text-align:center;
+      white-space:nowrap;
+    }
+    
+    .btn-primary{
+      background:var(--blue);
+      color:var(--white);
+      box-shadow:0 2px 8px rgba(11,77,162,0.2);
+    }
+    
+    .btn-primary:hover{
+      background:var(--blue-light);
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(11,77,162,0.35);
+    }
+    
+    .btn-primary:active{
+      transform:translateY(0);
+    }
+    
+    .btn-outline{
+      background:transparent;
+      border:2px solid var(--silver);
+      color:var(--blue);
+    }
+    
+    .btn-outline:hover{
+      border-color:var(--blue);
+      background:rgba(11,77,162,0.05);
+    }
+    
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:32px;
+      padding:60px 0 40px;
+    }
+    
+    .hero-card{
+      background:linear-gradient(135deg,var(--white) 0%,#f8fafc 100%);
+      border-radius:20px;
+      padding:40px;
+      box-shadow:var(--shadow-md);
+    }
+    
+    .hero h2{
+      margin:0 0 20px;
+      color:var(--blue);
+    }
+    
+    .hero .lead{
+      margin:0 0 28px;
+      font-size:17px;
+      line-height:1.7;
+      color:var(--text);
+    }
+    
+    .hero .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+    
+    .info-box{
+      background:rgba(11,77,162,0.04);
+      padding:20px;
+      border-radius:12px;
+      border-left:4px solid var(--blue);
+    }
+    
+    .info-box strong{
+      display:block;
+      color:var(--blue);
+      margin-bottom:8px;
+    }
+    
+    .info-box p{
+      margin:0;
+      font-size:14px;
+      color:var(--text-light);
+    }
+    
+    /* ============================================
+       SIDEBAR
+       ============================================ */
+    .sidebar-card{
+      background:var(--white);
+      padding:28px;
+      border-radius:16px;
+      box-shadow:var(--shadow-md);
+      margin-bottom:20px;
+    }
+    
+    .sidebar-card h3{
+      margin:0 0 14px;
+      color:var(--blue);
+    }
+    
+    .sidebar-card p{
+      font-size:14px;
+      color:var(--text-light);
+    }
+    
+    .sidebar-card ul{
+      padding-left:20px;
+      margin:12px 0 0;
+    }
+    
+    .sidebar-card li{
+      color:var(--text-light);
+      font-size:14px;
+      margin:10px 0;
+      line-height:1.5;
+    }
+    
+    /* ============================================
+       SECTIONS
+       ============================================ */
+    section{
+      padding:50px 0;
+    }
+    
+    .section-header{
+      margin-bottom:36px;
+      text-align:center;
+    }
+    
+    .section-header h2{
+      margin:0 0 12px;
+      color:var(--blue);
+    }
+    
+    .section-header p{
+      margin:0;
+      font-size:17px;
+      color:var(--text-light);
+    }
+    
+    /* ============================================
+       CARDS & GRIDS
+       ============================================ */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:24px;
+    }
+    
+    .card{
+      background:var(--white);
+      padding:28px;
+      border-radius:14px;
+      box-shadow:var(--shadow-sm);
+      transition:var(--transition);
+    }
+    
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-lg);
+    }
+    
+    /* ============================================
+       SERVICE CARDS
+       ============================================ */
+    .service-item h3{
+      margin:0 0 14px;
+      color:var(--blue);
+    }
+    
+    .service-item .description{
+      margin:0 0 18px;
+      font-size:15px;
+      line-height:1.6;
+      color:var(--text);
+    }
+    
+    .service-benefits{
+      background:rgba(11,77,162,0.03);
+      padding:18px;
+      border-radius:10px;
+      margin:18px 0;
+    }
+    
+    .service-benefits strong{
+      display:block;
+      color:var(--blue);
+      margin-bottom:10px;
+      font-size:14px;
+    }
+    
+    .service-benefits ul{
+      margin:0;
+      padding-left:20px;
+    }
+    
+    .service-benefits li{
+      font-size:14px;
+      color:var(--text-light);
+      margin:8px 0;
+    }
+    
+    .service-cta{
+      margin-top:20px;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+    }
+    
+    /* ============================================
+       EXPANDABLE SECTIONS
+       ============================================ */
+    .expandable{
+      border:1px solid var(--border);
+      border-radius:12px;
+      margin:20px 0;
+      overflow:hidden;
+      background:var(--white);
+      transition:var(--transition);
+    }
+    
+    .expandable:hover{
+      box-shadow:var(--shadow-sm);
+    }
+    
+    .expandable-header{
+      background:rgba(11,77,162,0.04);
+      padding:20px 24px;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      transition:background 0.2s;
+      user-select:none;
+    }
+    
+    .expandable-header:hover{
+      background:rgba(11,77,162,0.08);
+    }
+    
+    .expandable-header strong{
+      color:var(--blue);
+      font-size:16px;
+    }
+    
+    .expandable-header p{
+      margin:6px 0 0;
+      font-size:13px;
+      color:var(--text-muted);
+    }
+    
+    .expandable-icon{
+      font-size:20px;
+      color:var(--blue);
+      transition:transform 0.3s ease;
+      flex-shrink:0;
+    }
+    
+    .expandable-content{
+      padding:24px;
+      display:none;
+      animation:slideDown 0.3s ease;
+    }
+    
+    .expandable.active .expandable-content{
+      display:block;
+    }
+    
+    .expandable.active .expandable-icon{
+      transform:rotate(180deg);
+    }
+    
+    @keyframes slideDown{
+      from{opacity:0;transform:translateY(-10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    
+    /* ============================================
+       CASE METRICS
+       ============================================ */
+    .case-metrics{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:16px;
+      margin:24px 0;
+    }
+    
+    .metric{
+      background:rgba(11,77,162,0.06);
+      padding:16px;
+      border-radius:10px;
+      text-align:center;
+    }
+    
+    .metric-value{
+      display:block;
+      font-size:28px;
+      font-weight:700;
+      color:var(--blue);
+      margin-bottom:4px;
+    }
+    
+    .metric-label{
+      display:block;
+      font-size:12px;
+      color:var(--text-muted);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    
+    /* ============================================
+       PROCESS STEPS
+       ============================================ */
+    .process-steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:24px;
+      margin:32px 0;
+    }
+    
+    .step{
+      text-align:center;
+      padding:24px 16px;
+    }
+    
+    .step-number{
+      width:60px;
+      height:60px;
+      background:var(--blue);
+      color:var(--white);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      font-weight:700;
+      margin:0 auto 16px;
+      box-shadow:0 4px 12px rgba(11,77,162,0.25);
+    }
+    
+    .step h4{
+      margin:0 0 10px;
+      color:var(--blue);
+    }
+    
+    .step p{
+      margin:0;
+      font-size:14px;
+      color:var(--text-light);
+    }
+    
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer{
+      padding:50px 0 30px;
+      border-top:1px solid var(--border);
+      background:var(--white);
+    }
+    
+    .footer-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+      margin-bottom:32px;
+    }
+    
+    .footer-section h4{
+      margin:0 0 16px;
+      color:var(--blue);
+    }
+    
+    .footer-section p,
+    .footer-section li{
+      font-size:14px;
+      color:var(--text-light);
+      margin:10px 0;
+      line-height:1.6;
+    }
+    
+    .footer-section ul{
+      list-style:none;
+      padding:0;
+    }
+    
+    .footer-section a:hover{
+      color:var(--blue);
+    }
+    
+    .footer-bottom{
+      padding-top:24px;
+      border-top:1px solid var(--border);
+      text-align:center;
+      color:var(--text-muted);
+      font-size:13px;
+    }
+    
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media(min-width:900px){
+      .hero{
+        grid-template-columns:1.5fr 1fr;
+        align-items:start;
+      }
+    }
+    
+    @media(max-width:899px){
+      .container{padding:16px 20px}
+      
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+      }
+      
+      nav ul{
+        flex-wrap:wrap;
+        gap:12px;
+        font-size:14px;
+      }
+      
+      .cta-group{
+        width:100%;
+        flex-direction:column;
+      }
+      
+      .btn{
+        width:100%;
+      }
+      
+      .hero{
+        padding:40px 0 30px;
+      }
+      
+      .hero-card{
+        padding:28px;
+      }
+      
+      .hero .actions{
+        flex-direction:column;
+      }
+      
+      .hero .actions .btn{
+        width:100%;
+      }
+      
+      section{
+        padding:40px 0;
+      }
+      
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+      
+      .process-steps{
+        grid-template-columns:1fr;
+      }
+    }
+    
+    @media(max-width:600px){
+      .expandable-header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      
+      .expandable-icon{
+        align-self:flex-end;
+      }
+    }
+    
+    /* ============================================
+       ACCESSIBILITY
+       ============================================ */
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+    
+    :focus-visible{
+      outline:2px solid var(--blue);
+      outline-offset:2px;
+    }
+    
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:0.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:0.01ms!important;
+        scroll-behavior:auto!important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">TS</div>
+        <div class="brand-text">
+          <h1>Tawjih Strategy</h1>
+          <p class="tagline">We design strategies, you lead success</p>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Méthode</a></li>
+          <li><a href="#cases">Cas clients</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-group">
+        <a class="btn btn-outline" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener">📩 Devis gratuit</a>
+        <a class="btn btn-primary" href="https://calendly.com/mahmoud-semperfi/30min" target="_blank" rel="noopener">📅 Rendez-vous</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Structurez votre croissance avec une stratégie claire et mesurable</h2>
+        <p class="lead">Tawjih Strategy accompagne les PME, TPE et startups dans leur transformation : diagnostic stratégique, optimisation des processus, mise en place de tableaux de bord et pilotage de la performance — avec une approche rigoureuse inspirée de l'ISO 9001 et des neurosciences appliquées.</p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener">📩 Demander un devis gratuit</a>
+          <a class="btn btn-outline" href="https://calendly.com/mahmoud-semperfi/30min" target="_blank" rel="noopener">📅 Planifier un échange</a>
+        </div>
+
+        <div class="info-box">
+          <strong>💡 Notre promesse</strong>
+          <p>Des livrables concrets, des KPIs actionnables et un accompagnement personnalisé pour transformer votre ambition en résultats mesurables.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="sidebar-card">
+          <h3>🎯 Notre approche</h3>
+          <p>Une méthodologie en 4 étapes éprouvée :</p>
+          <ul>
+            <li><strong>Diagnostic approfondi</strong> : cartographie des processus, analyse SWOT, identification des leviers</li>
+            <li><strong>Stratégie sur mesure</strong> : plan d'action SMART avec roadmap et quick wins</li>
+            <li><strong>Mise en œuvre</strong> : accompagnement opérationnel, formation des équipes</li>
+            <li><strong>Pilotage</strong> : tableaux de bord, KPIs et revues périodiques</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>🚀 Offre vedette</h3>
+          <p><strong>Pack Audit Stratégique</strong><br>Audit complet + plan d'action + 3 mois d'accompagnement</p>
+          <a href="https://forms.gle/in93tpr1iTeDZsCT8" class="btn btn-primary" style="width:100%;margin-top:12px" target="_blank" rel="noopener">Commander l'audit</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <h2>Pourquoi Tawjih Strategy ?</h2>
+        <p>Parce que la stratégie sans exécution reste un vœu pieu</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="color:var(--blue);margin:0 0 14px">🔍 Approche processus</h3>
+          <p style="font-size:14px;color:var(--text-light);margin:0">Inspirée de l'ISO 9001, notre méthodologie cartographie vos processus, identifie les goulots d'étranglement et construit des systèmes d'amélioration continue.</p>
+        </div>
+
+        <div class="card">
+          <h3 style="color:var(--blue);margin:0 0 14px">🧠 Neurosciences appliquées</h3>
+          <p style="font-size:14px;color:var(--text-light);margin:0">Structuration des messages, design des CTA, mémorisation des formations : nous intégrons les principes cognitifs pour maximiser l'impact de chaque action.</p>
+        </div>
+
+        <div class="card">
+          <h3 style="color:var(--blue);margin:0 0 14px">📊 Pilotage par la data</h3>
+          <p style="font-size:14px;color:var(--text-light);margin:0">KPIs SMART, tableaux de bord dynamiques et revues de performance : prenez des décisions éclairées grâce à des indicateurs fiables et actionnables.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-header">
+        <h2>Nos services</h2>
+        <p>Des solutions concrètes pour chaque étape de votre croissance</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Service 1 -->
+        <article class="card service-item">
+          <h3>🔎 Audit interne & diagnostic stratégique</h3>
+          <p class="description">Photographie complète de votre organisation : processus, forces, faiblesses, opportunités et risques. Livrable : rapport d'audit + cartographie des processus + roadmap corrective alignée ISO 9001.</p>
+          
+          <div class="service-benefits">
+            <strong>Bénéfices concrets</strong>
+            <ul>
+              <li>Vision claire des axes d'amélioration prioritaires</li>
+              <li>Priorisation des actions selon ROI estimé</li>
+              <li>Base documentaire pour certification ISO 9001</li>
+              <li>Plan d'action SMART sur 6-12 mois</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener" style="width:100%">📩 Demander un devis</a>
+          </div>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="card service-item">
+          <h3>🎯 Élaboration de stratégies</h3>
+          <p class="description">Co-construction de stratégies commerciales, marketing et organisationnelles actionnables. Méthodologie : analyse concurrentielle, positionnement, segmentation client, plan d'action multi-canal.</p>
+          
+          <div class="service-benefits">
+            <strong>Livrables inclus</strong>
+            <ul>
+              <li>Document stratégique (vision, objectifs, KPIs)</li>
+              <li>Plan d'action opérationnel (quick wins + projets structurants)</li>
+              <li>Modèles de suivi (dashboards Excel/Power BI)</li>
+              <li>Formation des équipes sur la mise en œuvre</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://calendly.com/mahmoud-semperfi/30min" target="_blank" rel="noopener" style="width:100%">📅 Planifier un échange</a>
+          </div>
+        </article>
+  </div>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="card service-item">
+          <h3>📊 Tableaux de bord & KPIs</h3>
+          <p class="description">Conception d'indicateurs de performance SMART et mise en place de dashboards dynamiques pour piloter votre croissance en temps réel (commercial, production, finance, RH).</p>
+          
+          <div class="service-benefits">
+            <strong>Ce que vous obtenez</strong>
+            <ul>
+              <li>Sélection des KPIs pertinents selon vos objectifs</li>
+              <li>Dashboards visuels (Excel, Power BI, Google Data Studio)</li>
+              <li>Procédures de collecte et mise à jour des données</li>
+              <li>Formation à l'interprétation et prise de décision</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener" style="width:100%">📩 Obtenir un devis</a>
+          </div>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="card service-item">
+          <h3>🤝 Accompagnement & pilotage</h3>
+          <p class="description">Coaching des équipes dirigeantes et opérationnelles, gouvernance projet, revues mensuelles de performance et ajustements stratégiques en continu pour garantir l'atteinte de vos objectifs.</p>
+          
+          <div class="service-benefits">
+            <strong>Formules d'accompagnement</strong>
+            <ul>
+              <li>Coaching dirigeant : 2-4 séances par mois</li>
+              <li>Comités de pilotage mensuels avec revue des KPIs</li>
+              <li>Support opérationnel (déploiement terrain)</li>
+              <li>Hotline conseil (email/téléphone)</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://calendly
+
+        <!-- Service 5 -->
+        <article class="card service-item">
+          <h3>🎓 Formation & transfert de connaissances</h3>
+          <p class="description">Programmes sur mesure pour développer l'autonomie de vos équipes : stratégie d'entreprise, gestion de projet, pilotage par KPIs, amélioration continue, leadership et management.</p>
+          
+          <div class="service-benefits">
+            <strong>Formats disponibles</strong>
+            <ul>
+              <li>Ateliers pratiques en présentiel (1-3 jours)</li>
+              <li>Parcours certifiants sur 6-12 semaines</li>
+              <li>E-learning + coaching individuel</li>
+              <li>Transfert documentaire (processus, outils, modèles)</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://forms.gle/9WTUSixEN39FyKcP8" target="_blank" rel="noopener" style="width:100%">📩 S'inscrire à une formation</a>
+          </div>
+        </article>
+
+        <!-- Service 6 -->
+        <article class="card service-item">
+          <h3>🚀 Pack Startup / PME</h3>
+          <p class="description">Offre packagée pour entreprises de moins de 200 salariés : audit stratégique complet + plan d'action détaillé + 3 mois d'accompagnement + tableaux de bord personnalisés. Idéal pour structurer rapidement votre croissance.</p>
+          
+          <div class="service-benefits">
+            <strong>Inclus dans le pack</strong>
+            <ul>
+              <li>Audit complet (processus, commercial, finance, RH)</li>
+              <li>Stratégie 12 mois avec roadmap trimestrielle</li>
+              <li>3 dashboards personnalisés + formation</li>
+              <li>6 séances de coaching (2 par mois pendant 3 mois)</li>
+            </ul>
+          </div>
+
+          <div class="service-cta">
+            <a class="btn btn-primary" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener" style="width:100%">📩 Commander le pack</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="section-header">
+        <h2>Notre méthode en 4 étapes</h2>
+        <p>Un processus éprouvé pour transformer votre stratégie en résultats</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Diagnostic</h4>
+          <p>Analyse approfondie de votre organisation, cartographie des processus, identification des leviers de croissance et des points de blocage</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Stratégie</h4>
+          <p>Co-construction d'un plan d'action SMART avec roadmap détaillée, quick wins identifiés et projets structurants priorisés</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Mise en œuvre</h4>
+          <p>Déploiement opérationnel sur le terrain, formation des équipes, mise en place des tableaux de bord et des processus</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Pilotage</h4>
+          <p>Revues mensuelles de performance, ajustements stratégiques, amélioration continue et transfert progressif de compétences</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:40px;background:linear-gradient(135deg,rgba(11,77,162,0.05),rgba(11,77,162,0.02))">
+        <h3 style="color:var(--blue);margin:0 0 16px">🔄 Amélioration continue</h3>
+        <p style="margin:0;color:var(--text-light)">Chaque intervention intègre une boucle PDCA (Plan-Do-Check-Act) pour garantir la pérennité des résultats. Nous ne livrons pas de rapports dormants : nous construisons avec vous des systèmes vivants qui évoluent avec votre entreprise et renforcent l'autonomie de vos équipes.</p>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section id="cases">
+      <div class="section-header">
+        <h2>Cas clients & résultats</h2>
+        <p>Des interventions concrètes avec impact mesurable</p>
+      </div>
+
+      <!-- Case 1 -->
+      <div class="expandable active">
+        <div class="expandable-header">
+          <div>
+            <strong>Cas #1 : Optimisation du processus commercial (PME industrie)</strong>
+            <p>Secteur : Manufacturing • Taille : 85 collaborateurs • Durée : 6 mois</p>
+          </div>
+          <span class="expandable-icon">▼</span>
+        </div>
+        <div class="expandable-content">
+          <p><strong>Contexte :</strong> Taux de conversion commercial faible (12%), cycle de vente long (90 jours en moyenne), manque de visibilité sur le pipeline des opportunités, absence de processus standardisé.</p>
+          
+          <p><strong>Notre intervention :</strong></p>
+          <ul>
+            <li>Audit complet du processus commercial : 7 étapes identifiées, 3 goulots d'étranglement majeurs détectés</li>
+            <li>Refonte du funnel de vente : segmentation clients (ABC), scoring des leads, automatisation des relances</li>
+            <li>Mise en place d'un CRM + dashboards en temps réel (taux de conversion par étape, durée du cycle, valeur panier moyenne)</li>
+            <li>Formation intensive de la force de vente : techniques SPIN Selling, gestion des objections, closing</li>
+          </ul>
+
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-value">+38%</span>
+              <span class="metric-label">Taux de conversion</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">-32j</span>
+              <span class="metric-label">Cycle de vente</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">+1.2M€</span>
+              <span class="metric-label">CA additionnel/an</span>
+            </div>
+          </div>
+
+          <p><strong>Livrables :</strong> Processus commercial documenté (conforme ISO 9001), CRM configuré et opérationnel, 5 dashboards de pilotage, formation 12 heures pour l'équipe commerciale, guide de bonnes pratiques.</p>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="expandable">
+        <div class="expandable-header">
+          <div>
+            <strong>Cas #2 : Pilotage de la production (TPE agroalimentaire)</strong>
+            <p>Secteur : Agroalimentaire • Taille : 42 collaborateurs • Durée : 4 mois</p>
+          </div>
+          <span class="expandable-icon">▼</span>
+        </div>
+        <div class="expandable-content">
+          <p><strong>Contexte :</strong> Retards de livraison récurrents, taux de non-conformité élevé (8%), absence totale d'indicateurs de suivi, équipes en tension permanente.</p>
+          
+          <p><strong>Notre intervention :</strong></p>
+          <ul>
+            <li>Cartographie complète des processus de production : réception matières premières, transformation, conditionnement, expédition</li>
+            <li>Analyse des causes racines avec méthode 5 Pourquoi et diagramme Ishikawa</li>
+            <li>Mise en place d'indicateurs clés : TRS (Taux de Rendement Synthétique), taux de non-conformité, respect des délais, coût qualité</li>
+            <li>Formation équipe production aux principes du Lean Manufacturing et amélioration continue</li>
+            <li>Implémentation de rituels quotidiens (briefings, résolution de problèmes en équipe)</li>
+          </ul>
+
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-value">-72%</span>
+              <span class="metric-label">Non-conformités</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">94%</span>
+              <span class="metric-label">Respect délais</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">+18%</span>
+              <span class="metric-label">Productivité</span>
+            </div>
+          </div>
+
+          <p><strong>Livrables :</strong> 4 processus documentés avec procédures opérationnelles, tableau de bord production (mis à jour quotidiennement), plan d'amélioration continue, formation 16 heures équipe production.</p>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="expandable">
+        <div class="expandable-header">
+          <div>
+            <strong>Cas #3 : Stratégie de développement (Startup tech)</strong>
+            <p>Secteur : SaaS B2B • Taille : 15 collaborateurs • Durée : 5 mois</p>
+          </div>
+          <span class="expandable-icon">▼</span>
+        </div>
+        <div class="expandable-content">
+          <p><strong>Contexte :</strong> Croissance stagnante après le lancement, positionnement flou, acquisition client coûteuse (CAC élevé), absence de stratégie marketing structurée.</p>
+          
+          <p><strong>Notre intervention :</strong></p>
+          <ul>
+            <li>Audit stratégique complet : analyse concurrentielle, positionnement, proposition de valeur</li>
+            <li>Redéfinition du positionnement et segmentation clients (ICP - Ideal Customer Profile)</li>
+            <li>Élaboration d'une stratégie go-to-market multi-canal : inbound, outbound, partenariats</li>
+            <li>Mise en place de KPIs marketing/vente : MQL, SQL, taux de conversion, LTV/CAC ratio</li>
+            <li>Coaching de l'équipe fondatrice sur le pitch et la levée de fonds</li>
+          </ul>
+
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-value">×3.2</span>
+              <span class="metric-label">Leads qualifiés</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">-45%</span>
+              <span class="metric-label">Coût acquisition</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">850K€</span>
+              <span class="metric-label">Levée de fonds</span>
+            </div>
+          </div>
+
+          <p><strong>Livrables :</strong> Document stratégique 12-24 mois, plan d'action trimestriel, dashboards marketing/vente, pitch deck investisseurs, support à la négociation avec VCs.</p>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="expandable">
+        <div class="expandable-header">
+          <div>
+            <strong>Cas #4 : Structuration organisationnelle (Cabinet conseil RH)</strong>
+            <p>Secteur : Services B2B • Taille : 28 collaborateurs • Durée : 3 mois</p>
+          </div>
+          <span class="expandable-icon">▼</span>
+        </div>
+        <div class="expandable-content">
+          <p><strong>Contexte :</strong> Croissance rapide non structurée, rôles et responsabilités flous, communication interne défaillante, turnover élevé (35% annuel).</p>
+          
+          <p><strong>Notre intervention :</strong></p>
+          <ul>
+            <li>Diagnostic organisationnel complet : cartographie des rôles, analyse des flux de communication</li>
+            <li>Refonte de l'organigramme avec définition claire des postes (fiches de poste RACI)</li>
+            <li>Mise en place de processus RH : recrutement, onboarding, évaluation, développement</li>
+            <li>Implémentation d'outils collaboratifs et rituels de communication (stand-ups, rétrospectives)</li>
+            <li>Accompagnement des managers sur le leadership et la délégation</li>
+          </ul>
+
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-value">-68%</span>
+              <span class="metric-label">Turnover</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">+52%</span>
+              <span class="metric-label">Satisfaction équipe</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">+27%</span>
+              <span class="metric-label">Productivité</span>
+            </div>
+          </div>
+
+          <p><strong>Livrables :</strong> Organigramme détaillé, 28 fiches de poste, processus RH documentés, kit d'onboarding, formation management 20 heures.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Prêt à structurer votre croissance ?</h2>
+        <p>Discutons de votre projet autour d'un café (virtuel ou physique)</p>
+      </div>
+
+      <div class="card" style="max-width:700px;margin:0 auto;text-align:center;padding:40px">
+        <h3 style="color:var(--blue);margin:0 0 20px">Deux options pour démarrer</h3>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:32px 0">
+          <div style="background:rgba(11,77,162,0.04);padding:24px;border-radius:12px">
+            <div style="font-size:32px;margin-bottom:12px">📩</div>
+            <strong style="display:block;color:var(--blue);margin-bottom:8px">Demande de devis</strong>
+            <p style="font-size:14px;color:var(--text-light);margin:0 0 16px">Décrivez votre projet, nous vous répondons sous 24h avec une proposition détaillée</p>
+            <a class="btn btn-primary" href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener" style="width:100%">Remplir le formulaire</a>
+          </div>
+
+          <div style="background:rgba(11,77,162,0.04);padding:24px;border-radius:12px">
+            <div style="font-size:32px;margin-bottom:12px">📅</div>
+            <strong style="display:block;color:var(--blue);margin-bottom:8px">Rendez-vous découverte</strong>
+            <p style="font-size:14px;color:var(--text-light);margin:0 0 16px">30 minutes d'échange gratuit pour comprendre vos enjeux et vous conseiller</p>
+            <a class="btn btn-primary" href="https://calendly.com/mahmoud-semperfi/30min" target="_blank" rel="noopener" style="width:100%">Réserver un créneau</a>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;padding-top:32px;border-top:1px solid var(--border)">
+          <h4 style="color:var(--blue);margin:0 0 16px">Informations de contact</h4>
+          <p style="font-size:14px;color:var(--text-light);margin:8px 0">
+            <strong>Adresse :</strong> Cité 5000 Logements B56 N°8, Sidi Abdellah, Mahelma, Alger, Algérie
+          </p>
+          <p style="font-size:14px;color:var(--text-light);margin:8px 0">
+            <strong>Email :</strong> mahmoud.semperfi@gmail.com
+          </p>
+          <p style="font-size:14px;color:var(--text-light);margin:8px 0">
+            <strong>Téléphone :</strong> +213 (0) 660 09 73 49
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Tawjih Strategy</h4>
+          <p>Cabinet de conseil en stratégie, organisation et pilotage de performance pour PME, TPE et startups ambitieuses.</p>
+          <p style="margin-top:16px">
+            <strong>Approche :</strong> ISO 9001 • Neurosciences • Data-driven
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Audit & diagnostic stratégique</a></li>
+            <li><a href="#services">Élaboration de stratégies</a></li>
+            <li><a href="#services">Tableaux de bord & KPIs</a></li>
+            <li><a href="#services">Accompagnement & pilotage</a></li>
+            <li><a href="#services">Formation & transfert</a></li>
+            <li><a href="#services">Pack Startup / PME</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#process">Notre méthode</a></li>
+            <li><a href="#cases">Cas clients</a></li>
+            <li><a href="https://forms.gle/in93tpr1iTeDZsCT8" target="_blank" rel="noopener">Demander un devis</a></li>
+            <li><a href="https://calendly.com/mahmoud-semperfi/30min" target="_blank" rel="noopener">Prendre rendez-vous</a></li>
+            <li><a href="https://forms.gle/9WTUSixEN39FyKcP8" target="_blank" rel="noopener">Formations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p><br>Sidi Abdellah, Mahelma<br>Alger, Algérie</p>
+          <p style="margin-top:16px">
+            <strong>Email :</strong><br>mahmoud.semperfi@gmail.com
+          </p>
+          <p style="margin-top:12px">
+            <strong>Tél :</strong><br>+213 (0) 660 09 73 49
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 <strong>Tawjih Strategy</strong> — Tous droits réservés</p>
+        <p style="margin-top:8px">Conception & développement : Mahmoud Semperfi • Design minimaliste • ISO 9001 mindset • Neurosciences appliquées</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript pour les sections expandables -->
+  <script>
+    // Gestion des sections expandables
+    document.addEventListener('DOMContentLoaded', function() {
+      const expandableHeaders = document.querySelectorAll('.expandable-header');
+      
+      expandableHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+          const expandable = this.parentElement;
+          expandable.classList.toggle('active');
+        });
+        
+        // Accessibilité clavier
+        header.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+        
+        // Rendre focusable
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'false');
+      });
+    });
+    
+    // Mettre à jour aria-expanded
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          const expandable = mutation.target;
+          const header = expandable.querySelector('.expandable-header');
+          const isActive = expandable.classList.contains('active');
+          header.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        }
+      });
+    });
+    
+    document.querySelectorAll('.expandable').forEach(function(el) {
+      observer.observe(el, { attributes: true });
+    });
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tawjih Strategy",
+    "description": "Cabinet de conseil en stratégie, organisation et pilotage de performance pour PME, TPE et startups",
+     "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sidi Abdellah, Mahelma",
+      "addressLocality": "Alger",
+      "addressCountry": "DZ"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+213-660 09 73 49",
+      "contactType": "Customer Service",
+      "availableLanguage": ["French", "Arabic", "English"]
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Algeria"
+    },
+    "priceRange": "$"
+  }
+  </script>
+</body>
+</html.com/mahmoud-semperfi/30min" target="_blank" rel="noopener" 
